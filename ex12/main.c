@@ -57,6 +57,15 @@ struct sbiret sbi_ecall(int ext,
  */
 long sbi_get_spec_version(void) {
     // TODO: Implement this function
+    struct sbiret ret = sbi_ecall(
+        SBI_EXT_BASE,
+        SBI_EXT_BASE_GET_SPEC_VERSION,
+        0, 0, 0, 0, 0, 0
+    );
+    if (ret.error) {
+        return 0;
+    }
+    return ret.value;
 }
 
 /**
@@ -67,6 +76,16 @@ long sbi_get_spec_version(void) {
  */
 long sbi_probe_extension(int extid) {
     // TODO: Implement this function
+    struct sbiret ret = sbi_ecall(
+        SBI_EXT_BASE,
+        SBI_EXT_BASE_PROBE_EXT,
+        (unsigned long)extid,
+        0, 0, 0, 0, 0
+    );
+    if (ret.error) {
+        return 0;
+    }
+    return ret.value;
 }
 
 void start_kernel() {

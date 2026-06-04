@@ -1,4 +1,4 @@
-RISCV_GNU ?= riscv64-unknown-elf
+RISCV_GNU ?= riscv64-elf
 CC = $(RISCV_GNU)-gcc
 LD = $(RISCV_GNU)-ld
 OBJCOPY = $(RISCV_GNU)-objcopy

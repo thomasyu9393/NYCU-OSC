@@ -12,4 +12,3 @@
 
 * Exercise 1 - Kernel Initialization and UART
 * Exercise 2 - Supervisor Binary Interface
-
